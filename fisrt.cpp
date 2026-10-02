@@ -5,18 +5,34 @@
 using namespace std;
 
 int main() {
-    
     double a;
     a=sqrt(50);
-    
+
     //Начинаем цикл с конца, так как если решать данную задачу циклом, идущим с начала, получим неверный вывод
-    
-    for (int i=49;i>=1;--i) { 
+    for (int i=49;i>=1;--i) {
         a=sqrt(i+a);
     }
 
     cout<<a<<endl;
 
+    //Решение с while
+    a=sqrt(50);
+    int i = 49;
+    while (i >1) {
+        i--;
+        a=sqrt(i+a);
+    }
 
+    cout<<a<<endl;
+
+    //Решение с do-while
+    a = sqrt(50);
+    i = 49;
+    do {
+        i--;
+        a=sqrt(i+a);
+    } while (i>1);
+
+    cout<<a<<endl;
     return 0;
 }
