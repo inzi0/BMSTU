@@ -24,6 +24,7 @@ int main() {
 
     cout << "Введите кол-во пассажиров: ";
     cin >> n;
+    cin.ignore();
 
     if (n <= 0) {
         cout << "Ошибка! Пассажиров не может быть "<< n << "." << endl; //Проверка на кол-во пассажиров
@@ -36,7 +37,8 @@ int main() {
         Passager psgr;
 
         cout <<"Введите фио: ";
-        cin >> psgr.fio;
+        cin.ignore();
+        getline(cin, psgr.fio);
 
         cout << "Введите кол-во багажей: ";
         cin >> m;
@@ -50,7 +52,8 @@ int main() {
             Baggage b1;
 
             cout <<"Что за багаж: ";
-            cin >> b1.name;
+            cin.ignore();
+            getline(cin, b1.name);
 
             cout << "Вес багажа: ";
             cin >> b1.weight;
@@ -71,22 +74,12 @@ int main() {
 
     sr = float( sumw) /n;
 
-    cout << "Средний вес багажа всех пассажиров: " << sr << endl;
-    cout << "Кол-во пассажиров: " << passagers.size() << endl;
-
     k=0; //Добавляем счётчик
 
     for (int c=0; c < tweights.size();c++) {
         if ( tweights[c] > sr) ++k; //Перебираем кол-во пассажиров, вес багажа которых выше, чем средний
     }
-
-    for (int r =0; r<passagers.size(); r++) { //Вывод
-        cout <<"Пассажир №" << (r+1) << ": " << passagers[r].fio << endl;
-        for (int r1 = 0; r1 < passagers[r].baggages.size(); r1++) {
-            cout << "Багаж №" << r1+1 << ": "<< passagers[r].baggages[r1].name << " " << passagers[r].baggages[r1].weight << endl;
-        }
-
-    }
+    
     cout << "Количество пассажиров, вес багажа которых превосходит средний: " << k << endl;
     return 0;
 }
