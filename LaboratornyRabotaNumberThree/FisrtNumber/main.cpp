@@ -1,3 +1,4 @@
+//Вариант 24, Соваренко Максим Васильевич 
 #include <iostream>
 #include <utility>
 #include <fstream>
