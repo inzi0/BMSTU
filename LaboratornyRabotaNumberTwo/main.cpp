@@ -22,7 +22,7 @@ vector<Ship> createShip() {
 
     if ( !(cin >>n ) || n<1 ) {
         cout << "Ошибка!" << endl;
-        return {};
+        return 1;
     }
 
     vector<Ship> ships(n);
@@ -39,14 +39,14 @@ vector<Ship> createShip() {
 
         if (!(cin >> s.water) || s.water <= 0) {
             cout << "Некорректное водоизмещение!" << endl;
-            return {};
+            return 1;
         }
 
         cout << "Численность экипажа: " << endl;
 
         if (!(cin >> s.crew) || s.crew < 1) {
             cout << "Некорректная численность экипажа!" << endl;
-            return {};
+            return 1;
         }
 
         ships[i]=s;
